@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-print("=" * 50)
-print(" " * 15 + "1 - TOPSHIRIQ")
-print("=" * 50)
+# print("=" * 50)
+# print(" " * 15 + "1 - TOPSHIRIQ")
+# print("=" * 50)
 
 #
 # class Product(ABC):
@@ -128,4 +128,45 @@ class FootballTeam(Team):
     def is_full_team(players):
         return len(players) >= 11
 
+team1 = FootballTeam("Uzbeksitan", "Izzatillo","O'zbekiston", "Bunyodkor")
+team2 = FootballTeam("RealMadrid", "H.Alonso", "Ispaniya", "santiyago_bernadeyo")
 
+team1.players.extend([
+    "Eldor Shomurodov",
+    "Jaloliddin Masharipov",
+    "Otabek Shukurov",
+    "Odiljon Hamrobekov",
+    "Rustam Ashurmatov",
+    "Abbosbek Fayzullaev",
+    "Dostonbek Tursunov",
+    "Islom Tuxtaxujaev",
+    "Akmal Mozgovoy",
+    "Sherzod Nasrullaev",
+    "Utkir Yusupov"
+]
+)
+
+team2.players.extend([
+    "Thibaut Courtois",
+    "Dani Carvajal",
+    "Antonio Rudiger",
+    "David Alaba",
+    "Ferland Mendy",
+    "Luka Modric",
+    "Toni Kroos",
+    "Federico Valverde",
+    "Jude Bellingham",
+    "Vinicius Junior",
+
+
+]
+)
+
+print(FootballTeam.is_full_team(team2.players))
+print(FootballTeam.is_full_team(team1.players))
+
+team2.coach="Shukurulloh"
+print(team2.get_info())
+
+del team2.stadium
+print(hasattr(team2, "stadium"))
